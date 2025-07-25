@@ -1,0 +1,537 @@
+:root {
+    --5: #005187;
+    --4: #4d82bc;
+    --3: #84b6f4;
+    --2: #c4dafa;
+    --1: #fcffff;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: var(--3);
+    font-family: RedHat;
+    overflow-x: hidden;
+}
+
+button {
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* ----- SECTOR: HEADER ----- */
+
+header {
+    background-color: var(--5);
+    width: 100dvw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    color: var(--2);
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+}
+
+h1 {
+    font-size: 2rem;
+    width: fit-content;
+    margin-left: 2dvw;
+    color: var(--1);
+    /* border: 1px solid #000; */
+}
+
+.user {
+    /* border: 1px solid #000; */
+    width: 30dvw;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: var(--2);
+}
+
+.user button {
+    border: none;
+    background-color: var(--2);
+    color: var(--5);
+    padding: 5px;
+}
+
+.date-hour {
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ----- FIN: HEADER ----- */
+
+/* ----- SECTOR: TODOLIST ----- */
+
+.todo-list {
+    /* border: 3px solid #f00; */
+    width: 60dvw;
+    margin: auto;
+    margin-top: 110px;
+    height: 75dvh;
+    background-color: var(--5);
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.add-task-btn {
+    height: fit-content;
+    width: fit-content;
+    margin: auto;
+}
+
+.add-task-btn button {
+    font-size: 2rem;
+    padding: 5px 10px;
+    background-color: var(--2);
+    color: var(--5);
+    border: none;
+}
+
+.tasks {
+    /* border: 1px solid #000; */
+    margin: 15px auto;
+    height: 90%;
+}
+
+.task {
+    /* border: 1px solid #000; */
+    display: flex;
+    margin: auto;
+    height: 25%;
+    box-shadow: 0 0 10px var(--3);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.info-task {
+    /* border: 1px solid #00f; */
+    color: var(--2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    width: 90%;
+}
+
+.info-task h3 {
+    font-size: 1.5rem;
+}
+
+.task-date {
+    /* border: 1px solid #0f0; */
+    display: flex;
+    margin-left: 20px;
+    width: 50%;
+    justify-content: space-evenly;
+    color: var(--1);
+}
+
+.edit-erase-task {
+    /* border: 1px solid #f00; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    width: 10%;
+}
+
+.edit-erase-task button {
+    background-color: inherit;
+    border: none;
+    color: var(--3);
+}
+
+.edit-erase-task button span {
+    font-size: 2rem;
+}
+
+/* ----- FIN: TODOLIST ----- */
+
+
+
+/* ----- SECTOR: TODOFORM ----- */
+#form-dialog {
+    position: fixed;
+    max-width: 90%;
+    left: 96px;
+    width: 500px;
+    background-color: transparent;
+    border: none;
+    width: 100dvw;
+}
+
+#form-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5)
+}
+
+.todo-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: var(--2);
+}
+
+.todo-form div {
+    /* border: 1px solid #000; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    width: 90%;
+}
+
+.todo-form label {
+    font-size: 1.5rem;
+}
+
+.todo-form input,
+.todo-form textarea {
+    padding: 3px 8px;
+    font-size: 1.1rem;
+    font-family: RedHat;
+    width: 80%;
+}
+
+.todo-form input::placeholder {
+    font-style: italic;
+}
+
+.todo-form input:focus-visible,
+.todo-form textarea:focus-visible {
+    outline: none;
+}
+
+.todo-form .add-cancel-btn {
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.add-cancel-btn button {
+    border: none;
+    background-color: var(--3);
+    color: var(--5);
+    padding: 3px 5px;
+}
+
+.add-cancel-btn span {
+    font-size: 3rem;
+}
+
+/* CONFIRM-CLOSE DIALOG */
+
+#confirm-close {
+    position: fixed;
+    left: 770px;
+    top: 300px;
+    background-color: var(--5);
+    color: var(--2);
+    height: 20dvh;
+    width: 20dvw;
+    padding: 5px;
+    border: 5px dashed var(--1);
+    border-radius: 10px;
+}
+
+#confirm-close::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.confirm-close-form {
+    /* border: 1px solid #f00; */
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.confirm-close-form h3 {
+    text-align: center;
+    text-wrap: pretty;
+}
+
+.confirm-close-form div {
+    /* border: 1px solid #f00; */
+    width: 80%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.confirm-close-form button {
+    border: none;
+    background-color: var(--3);
+    color: var(--5);
+    padding: 5px 8px;
+    font-size: 1.2rem;
+}
+
+/* END CONFIRM-CLOSE DIALOG */
+
+/* ----- FIN: TODOFORM ----- */
+
+
+
+/* ----- SECTOR: USER ----- */
+
+#user-session {
+    background-color: transparent;
+    border: none;
+    left: 20px;
+    top: 0;
+    width: 100dvw;
+}
+
+.user-form {
+    padding: 20px;
+    color: var(--2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.user-form h2 {
+    font-size: 2.5rem;
+}
+
+.user-form h3 {
+    font-size: 2rem;
+}
+
+.user-form label {
+    font-size: 1.5rem;
+}
+
+.user-form input {
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    font-family: RedHat;
+}
+
+.user-form input:focus-visible {
+    outline: none;
+}
+
+.user-form button {
+    font-size: 2rem;
+    padding: 5px 10px;
+    background-color: var(--2);
+    color: var(--5);
+    border: none;
+}
+
+/* ----- FIN: USER ----- */
+
+
+
+/* ----- SECTOR: FOOTER ----- */
+
+footer {
+    background-color: var(--5);
+    max-height: 150px;
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    width: 100dvw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.notifications {
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notifications button {
+    border: none;
+    background-color: inherit;
+    color: var(--2);
+}
+
+.notifications-off {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.footer-img {
+    /* border: 1px solid #fff; */
+    flex-grow: 1;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 95%;
+}
+
+footer img {
+    max-width: 100px;
+    max-height: 90px;
+    border-radius: 10px;
+    margin-left: 20%;
+}
+
+.footer-info {
+    /* border: 1px solid #fff; */
+    width: 20dvw;
+    max-height: 100%;
+    justify-self: self-start;
+    text-align: end;
+}
+
+footer p {
+    color: var(--3);
+}
+
+footer a {
+    color: var(--2);
+    text-decoration: none;
+}
+
+footer a:visited {
+    color: var(--2);
+}
+
+footer a:active {
+    color: var(--2);
+}
+
+footer a:hover {
+    font-style: italic;
+}
+
+/* ----- FIN: FOOTER ----- */
+
+
+/* ----- RESPONSIVE DESING ----- */
+
+@media screen and (max-width:1080px) {
+
+    /* body {
+        background-color: var(--5);
+    } */
+
+    header {
+        width: 100dvw;
+        display: inline-flex;
+    }
+
+    h1 {
+        width: 120px;
+    }
+
+    .date-hour {
+        width: 100px;
+    }
+
+    .date-hour div:first-of-type {
+        display: none;
+    }
+
+    .user {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .todo-list {
+        width: 90dvw;
+        height: 80dvh;
+        margin: auto;
+        margin-top: 140px;
+    }
+
+    .task {
+        height: fit-content;
+        flex-direction: column;
+        box-shadow: none;
+    }
+
+    .info-task {
+        margin-bottom: 20px;
+    }
+
+    .task-date {
+        width: 100%;
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .edit-erase-task {
+        width: 50%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #form-dialog {
+        left: 21px;
+    }
+
+    .todo-form {
+        left: 10px;
+    }
+
+    #confirm-close {
+        left: 40px;
+        top: 300px;
+        width: 80%;
+    }
+
+    footer {
+        position: fixed;
+        width: 100dvw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        margin: auto;
+    }
+
+    footer .footer-img,
+    footer p:nth-of-type(2),
+    footer p:nth-of-type(3) {
+        display: none;
+    }
+
+    .footer-info {
+        width: 100%;
+    }
+
+}
+
+
+/* ----- FONTS ----- */
+
+@font-face {
+    font-family: "RedHat";
+    src: url(fonts/RedHatDisplay-Regular.ttf) format("truetype");
+    font-weight: 400;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tareas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header>
+        <h1>Lista de tareas</h1>
+        <div class="date-hour">
+            <div><p class="date"></p></div>
+            <div><p class="hour"></p></div>
+        </div>
+        <div class="user">
+            <h2>Bienvenido</h2>
+            <h3 id="user-loged"></h3>
+            <button id="change-name"><span class="material-symbols-outlined">edit</span></button>
+        </div>
+    </header>
+
+    <dialog id="user-session">
+        <form method="dialog" class="todo-list user-form">
+            <h2>¡Bienvenid@!</h2>
+            <h3 id="user"></h3>
+            <label for="user-name" id="label-name"> Ingresa tu nombre por favor:</label>
+            <input type="text" id="user-name" autocomplete="off">
+            <button class="login">Registrar</button>
+        </form>
+    </dialog>
+
+    <dialog id="form-dialog">
+        <form method="dialog" class="todo-list todo-form">
+        <h2>Agregar nueva tarea:</h2>
+        <div class="task-title">
+            <label for="task-name">Nueva tarea:</label>
+            <input type="text" id="task-name" placeholder="Título de la tarea" autocomplete="off">
+        </div>
+        <div class="task-datetime">
+            <label for="task-date-start">Fecha de inicio:</label>
+            <input type="datetime-local" id="task-date-start" autocomplete="off">
+            <label for="task-date-end">Fecha final:</label>
+            <input type="datetime-local" id="task-date-end" autocomplete="off">
+        </div>
+        <div class="task-extra">
+            <label for="task-description">Descripción:</label>
+            <textarea id="task-description" placeholder="Descripcion de la tarea" autocomplete="off"></textarea>
+        </div>
+        <div class="add-cancel-btn">
+            <button><span class="material-symbols-outlined" id="accept-new-task">check</span></button>
+            <button><span class="material-symbols-outlined" id="decline-new-task">close</span></button>
+        </div>
+    </form>
+    </dialog>
+
+    <dialog id="confirm-close">
+        <form method="dialog" class="confirm-close-form">
+            <h3>Aún hay campos por completar, ¿está seguro que quiere abandonar?</h3>
+            <div class="confirm-close-btns">
+                <button id="confirm-close-btn">Abandonar</button>
+                <button id="cancel-close-btn">Quedarse</button>
+            </div>
+        </form>
+    </dialog>
+
+    <section class="todo-list">
+        <div class="add-task-btn"><button id="addTask">Agregar tarea</button></div>
+            <div class="tasks"></div>
+    </section>
+
+    <footer>
+        <div class="notifications">
+            <button id="notification"><span class="material-symbols-outlined" id="toggle">notifications</span></button>
+        </div>
+        <div class="footer-img">
+            <img src="imgs/500x500w.png" alt="Logo Kaido">
+        </div>
+        <div class="footer-info">
+            <p>&copy; 2025 <a href="">Kaido Studio</a>. Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
