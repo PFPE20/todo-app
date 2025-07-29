@@ -228,3 +228,28 @@ if (logedUser === null) {
     userDialog.close();
 }
 
+editUser.addEventListener('click', () => {
+  userDialog.showModal();
+});
+
+// NOTIFICATIONS
+
+function requestNotificationPermission() {
+  if ('Notification' in window) {
+    Notification.requestPermission().then(permission => {
+      if (permission === 'granted') {
+        console.log('Permiso a notificaciones concedido.');
+      } else if (permission === 'denied') {
+        console.log('Permiso a notificaciones denegado.');
+      } else {
+        console.log('Pestaña de notificaciones ignorada.');
+      }
+    })
+  } else {
+    console.warn('Este navegador no soporta la API de "Notifications"');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  requestNotificationPermission();
+})
